@@ -41,6 +41,8 @@
        */
       // [START facebookcallback]
       function checkLoginState(event) {
+        console.log("checkLoginState called");
+        console.log(event.authResponse);
         if (event.authResponse) {
           // User is signed-in Facebook.
           var unsubscribe = firebase.auth().onAuthStateChanged(function(firebaseUser) {
@@ -121,6 +123,8 @@
         // Listening for auth state changes.
         // [START authstatelistener]
         firebase.auth().onAuthStateChanged(function(user) {
+          console.log("initApp onAuthStateChanged");
+          console.log(user);
           if (user) {
             // User is signed in.
             var displayName = user.displayName;
@@ -158,7 +162,7 @@
       $(document).ready(function() {
         initApp();
       })
-
+      //initApp();
     </script>
 
     <script>
