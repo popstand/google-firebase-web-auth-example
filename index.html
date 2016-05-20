@@ -16,19 +16,43 @@
         databaseURL: "https://project-280472635852358456.firebaseio.com",
         storageBucket: "project-280472635852358456.appspot.com",
       };
+
       firebase.initializeApp(config);
 
       $(document).ready(function(){
         console.log("hi ready");
         firebase.auth();
-      })
+      });
     </script>
 
-    
+    <!-- Facebook -->
+    <!-- [START facebookconfig] -->
+    <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+      FB.init({
+        /**********************************************************************
+         * TODO(Developer): Change the value below with your Facebook app ID. *
+         **********************************************************************/
+        appId      : '1021484341274564',
+        status     : true,
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+      // [START_EXCLUDE silent]
+      // Observe the change in Facebook login status
+      // [START facebookauthlistener]
+      FB.Event.subscribe('auth.authResponseChange', checkLoginState);
+      // [END facebookauthlistener]
+      // [END_EXCLUDE]
+    </script>
+    <!-- [END facebookconfig] -->
+
 
   </head>
+  
   <body>
 
+    <fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large"></fb:login-button>
 
   </body>
 </html>
