@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test Firebase</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBiOqE2U9mAPbQTfOizwF5oKwhqSgQrHKk",
+        authDomain: "project-280472635852358456.firebaseapp.com",
+        databaseURL: "https://project-280472635852358456.firebaseio.com",
+        storageBucket: "project-280472635852358456.appspot.com",
+      };
+      firebase.initializeApp(config);
+
+      $(document).ready(function(){
+        console.log("hi ready");
+        firebase.auth();
+      })
+    </script>
+
+    
+
+  </head>
+  <body>
+
+
+  </body>
+</html>
