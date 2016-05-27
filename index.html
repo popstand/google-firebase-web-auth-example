@@ -14,7 +14,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 
-    <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <script>
       // Initialize Firebase
@@ -126,6 +126,7 @@
           console.log("initApp onAuthStateChanged");
           console.log(user);
           if (user) {
+
             // User is signed in.
             var displayName = user.displayName;
             var email = user.email;
@@ -135,6 +136,8 @@
             var uid = user.uid;
             var refreshToken = user.refreshToken;
             var providerData = user.providerData;
+            var jwt = user.Vc;
+
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-account-details').textContent = JSON.stringify({
@@ -145,7 +148,8 @@
               isAnonymous: isAnonymous,
               uid: uid,
               refreshToken: refreshToken,
-              providerData: providerData
+              providerData: providerData,
+              JWT: jwt
             }, null, '  ');
             // [END_EXCLUDE]
           } else {
