@@ -1,3 +1,9 @@
+$ cd this_project/
+
+$ firebase serve
+
+Should be server listening at: http://localhost:5000
+
 # Setting up accounts blog post
 
 https://medium.com/@kurtybot/27b7d8816a5c
